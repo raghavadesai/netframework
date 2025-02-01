@@ -8,7 +8,7 @@ def create_server_ssl_context(
     certfile: str,
     keyfile: str,
     password: Optional[str] = None,
-    verify_mode: int = ssl.CERT_NONE
+    verify_mode: ssl.VerifyMode = ssl.CERT_NONE
 ) -> ssl.SSLContext:
     """Create SSL context for server with the given certificate and key."""
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
@@ -18,7 +18,7 @@ def create_server_ssl_context(
 
 def create_client_ssl_context(
     cafile: Optional[str] = None,
-    verify_mode: int = ssl.CERT_REQUIRED
+    verify_mode: ssl.VerifyMode = ssl.CERT_REQUIRED
 ) -> ssl.SSLContext:
     """Create SSL context for client with optional CA certificate."""
     context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
