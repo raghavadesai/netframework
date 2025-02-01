@@ -13,6 +13,7 @@ class EchoProtocol(JSONProtocol):
         return f"Secure Echo: {message}"
 
 def main():
+    server = None  # Initialize server variable
     try:
         # Create SSL context with self-signed certificate
         ssl_context = create_server_ssl_context(
