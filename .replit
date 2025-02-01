@@ -55,3 +55,7 @@ run = ["sh", "-c", "python examples/echo_server.py"]
 [[ports]]
 localPort = 8000
 externalPort = 80
+
+[[ports]]
+localPort = 8443
+externalPort = 3000
